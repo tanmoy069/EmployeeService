@@ -34,5 +34,18 @@ public class EmployeeService {
 			return false;
 		}
 	}
+	
+	public boolean updateEmployee(@Valid Employee emp) {
+		try {
+			if (findEmployeeById(emp.getId()) != null) {
+				empRepo.save(emp);
+				return true;
+			}
+			return false;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
 
 }
