@@ -21,6 +21,10 @@ public class EmployeeService {
 	public Employee findEmployeeById(int id) {
 		return empRepo.findById(id);
 	}
+	
+	public Employee findEmployeeByCode(String code) {
+		return empRepo.findByCode(code);
+	}
 
 	public boolean saveEmployee(@Valid Employee emp) {
 		try {
