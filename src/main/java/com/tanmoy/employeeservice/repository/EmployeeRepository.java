@@ -7,5 +7,6 @@ import com.tanmoy.employeeservice.domain.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	Employee findById(int id);
+	Employee findByCode(String code);
 
 }
