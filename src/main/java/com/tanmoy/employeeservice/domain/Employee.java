@@ -8,16 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "Employee", uniqueConstraints = @UniqueConstraint(columnNames = { "code", "mobile" }))
+@Table(name = "Employee")
 public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(length = 4, nullable = false)
+	@Column(length = 4, nullable = false, unique = true)
 	private String code;
 	@Column(length = 35, nullable = false)
 	private String name;
