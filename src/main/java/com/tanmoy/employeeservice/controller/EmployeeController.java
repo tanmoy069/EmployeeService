@@ -1,5 +1,7 @@
 package com.tanmoy.employeeservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,11 @@ public class EmployeeController {
 		if (id != null)	return empService.findEmployeeById(id);
 		if (code != null) return empService.findEmployeeByCode(code);
 		return null;
+	}
+	
+	@GetMapping("/findall")
+	public List<Employee> findAllEmployee() {
+		return empService.findAll();
 	}
 
 }
