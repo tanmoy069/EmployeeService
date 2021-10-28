@@ -41,5 +41,10 @@ public class EmployeeController {
 	public boolean saveEmployee(@RequestBody Employee employee) {
 		return empService.saveEmployee(employee);
 	}
+	
+	@PostMapping("/update")
+	public boolean updateEmployee(@RequestBody Employee employee) {
+		return empService.updateEmployee(employee);
+	}
 
 }
