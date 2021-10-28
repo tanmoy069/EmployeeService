@@ -1,5 +1,7 @@
 package com.tanmoy.employeeservice.service;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,10 @@ public class EmployeeService {
 	
 	public Employee findEmployeeByCode(String code) {
 		return empRepo.findByCode(code);
+	}
+	
+	public List<Employee> findAll() {
+		return empRepo.findAll();
 	}
 
 	public boolean saveEmployee(@Valid Employee emp) {
