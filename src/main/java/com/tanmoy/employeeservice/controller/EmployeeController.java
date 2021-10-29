@@ -1,7 +1,5 @@
 package com.tanmoy.employeeservice.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tanmoy.employeeservice.domain.Employee;
+import com.tanmoy.employeeservice.model.EmployeeList;
 import com.tanmoy.employeeservice.service.EmployeeService;
 
 @RestController
@@ -33,8 +32,8 @@ public class EmployeeController {
 	}
 	
 	@GetMapping("/findall")
-	public List<Employee> findAllEmployee() {
-		return empService.findAll();
+	public EmployeeList findAllEmployee() {
+		return new EmployeeList(empService.findAll());
 	}
 	
 	@PostMapping("/save")
